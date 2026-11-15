@@ -1,0 +1,6 @@
+test_id,method,path,payload,expected_status,expected_note
+API-01,GET,/health,,200,Health check returns approved fields only.
+API-02,POST,/profile,"{""display_name"":""Rohan""}",200,Valid short name accepted.
+API-03,POST,/profile,"{""display_name"":123}",400,Wrong input type rejected.
+API-04,POST,/profile,"{""display_name"":""x repeated 500 times""}",400,Oversized input rejected.
+API-05,POST,/profile,{},200_or_documented,Missing optional field should be handled predictably.
